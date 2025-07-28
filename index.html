@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <title>Prince Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Prince</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><li><a href="#Home">Home</a></li></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><li><a href="#about">About</a></li></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><li><a href="#skills">Skills</a></li></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><li><a href="#project">Project</a></li></div>
+                <!-- <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Blogs</a></div> -->
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><a href="#">Contact Us</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="">Home</a>
+                <a href="">About</a>
+                <a href="">Skills</a>
+                <a href="">Project</a>
+                <a href="">Contact Us</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+        <section>
+            <div class="main-container">
+                <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+                </div>
+                <div class="content">
+                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Prince</span></h1>
+                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span><h5> IT Engineering Student & Web Developer</h5></span></div>
+                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">interactive web experiences. Currently pursuing IT Engineering while building projects that make a difference</p>
+                    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
+                         <a href="#" ><i class="fa-brands fa-github"></i></a> 
+                        <!-- <a href="#"><i class="fa-brands fa-facebook"></i></a> -->
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="1300">
+                        <button>View Project</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ****************************************************************************************** -->
+        <section id="about" class="about">
+  <h2>About Me</h2>
+  <div class="underline"></div>
+
+  <div class="intro">
+    I'm a developer <span class="highlight">Prince Patel</span>, an IT Engineering Student
+  </div>
+
+  <p>
+    I am passionate about web development and building interactive, user-friendly websites and applications. 
+    Currently pursuing my degree in IT Engineering, I balance my academic studies with practical projects 
+    to enhance my skills and knowledge in the tech field.
+  </p>
+
+  <p>
+    My journey in web development has led me to work on various projects, including 
+    <a href="https://theprasang.com" target="_blank">The Prasang</a>
+    <a href="#" target="_blank"></a>. These experiences have significantly contributed to my growth as a developer.
+  </p>
+
+  <div class="grid-container">
+    <div>
+      <h3>Education</h3>
+      <ul>
+        <li>B.Tech in IT Engineering</li>
+        <li>Higher Secondary School Certificate</li>
+        <li>Excel master</li>
+        <li>CCC certificate</li>
+
+
+      </ul>
+    </div>
+
+    <div>
+      <h3>Interests</h3>
+      <ul>
+        <li>Web Development</li>
+        <li>UI/UX Design</li>
+        <li>Problem Solving</li>
+      </ul>
+    </div>
+  </div>
+</section>
+            <!-- ***************************************************************************     -->
+      <section id="skills"  class="skills-section">
+  <h2>My Skills</h2>
+  <div class="underline"></div>
+  <p class="skills-intro">
+    Here are some of the technologies and tools I am proficient in. I continuously learn and
+    improve my skills to stay updated with the latest trends.
+  </p>
+
+  <div class="skills-grid">
+
+    <!-- Skill Card -->
+    <div class="skill-card">
+      <div class="skill-header">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+        <span>HTML</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress fill-html" style="width: 90%;"></div>
+      </div>
+      <span class="percent">90%</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+        <span>CSS</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress fill-css" style="width: 80%;"></div>
+      </div>
+      <span class="percent">80%</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+        <span>JavaScript</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress fill-js" style="width: 40%;"></div>
+      </div>
+      <span class="percent">40%</span>
+    </div>
+
+     <div class="skill-card">
+      <div class="skill-header">
+        <!-- <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" /> -->
+         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Language Logo" width="30" height="30">
+
+        <span>C/C++</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress fill-tailwind" style="width: 65%;"></div>
+      </div>
+      <span class="percent">65%</span>
+    </div> 
+
+    <!-- <div class="skill-card">
+      <div class="skill-header">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
+        <span>Bootstrap</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress fill-bootstrap" style="width: 85%;"></div>
+      </div>
+      <span class="percent">85%</span>
+    </div> -->
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
+        <span>Git</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress fill-git" style="width: 75%;"></div>
+      </div>
+      <span class="percent">75%</span>
+    </div>
+
+    <div class="skill-card">
+      <div class="skill-header">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+        <span>GitHub</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress fill-github" style="width: 60%;"></div>
+      </div>
+      <span class="percent">60%</span>
+    </div>
+
+    <!-- <div class="skill-card">
+      <div class="skill-header">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="Database" />
+        <span>Database</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress fill-db" style="width: 65%;"></div>
+      </div>
+      <span class="percent">65%</span>
+    </div> -->
+
+  </div>
+</section>
+
+
+
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+          AOS.init({offset:0});
+        </script>
+        <script>
+            function hamburg(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(0px)"
+            }
+            function cancel(){
+                const navbar = document.querySelector(".dropdown")
+                navbar.style.transform = "translateY(-500px)"
+            }
+        </script>
+</body>
+</html>
