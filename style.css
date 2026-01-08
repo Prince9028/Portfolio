@@ -8,16 +8,26 @@
 }
 
 html{
-    overflow-x: hidden;
+    overflow-x:au;
 }
 
-body{
+html, body {
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background-color: #0f172a;
+}
+
+
+/* body{
     width: 100%;
     height: 100vh;
-    overflow: auto;
+    overflow:auto;
     /* background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173)); */
-    background: #0f172a;
-}
+    /* background: #0f172a;
+} */ */
 
 nav{
     width: 100%;
@@ -77,7 +87,7 @@ nav{
     left: 0;
     width: 0%;
     height: 3px;
-    background-color: rgb(109,67, 0);
+    background-color: #2563eb;
     transition: 0.2s linear;
 }
 
@@ -130,12 +140,12 @@ nav{
 }
 
 .dropdown .links a:hover{
-    background-color: rgb(109,67, 0);
+     /* background-color: rgb(109,67, 0);  */
 }
 
 section{
     width: 100%;
-    height: 90vh;
+   min-height: 100vh;
 }
 
 .main-container{
@@ -234,14 +244,14 @@ section{
 .social-links i:hover{
     scale: 1.3;
     color: white;
-    background-color: rgb(74, 41, 225);
+    background-color:#2563eb;
     filter: drop-shadow(0 0 10px rgb(38, 59, 179));
 }
 
 .content button{
-    width: 40%;
-    height: 6vh;
-    margin: 30px;
+    width: 30%;
+    height: 8vh;
+    margin: 35px;
     background-color: #2563eb;
     color: white;
     border: none;
@@ -254,11 +264,10 @@ section{
 
 .content button:hover{
  scale: 1.1;
- color: rgb(52, 70, 233);
- border: 2px solid rgb(32, 31, 29);
+ color:#2563eb;
+ border: 2px solid white;
  background-color: transparent;
  font-weight: 700;
- box-shadow: 0 0 40px rgb(109,67, 0);
 }
 
 
@@ -309,14 +318,14 @@ section{
 
 }
 /* About me CSS */
-body {
+/* body {
     background-color: #0d0d0d;
     /* background-color: #0f172a; */
     /* background-color: #1e293b; */
-    color: white;
+    /* color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     scroll-behavior: smooth;
-  }
+  } */ */
   
 
 
@@ -416,11 +425,12 @@ body {
 
 
 /* === SKILLS SECTION === */
- body {
+ /* body {
     background-color: #0d1117;
     color: #e0e0e0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
+    margin-bottom: auto;
+  } */
 
   .skills-section {
     max-width: 1200px;
@@ -528,4 +538,124 @@ body {
     }
   }
 
+  /* ***********************ENQUIRY************************************ */
+  body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0f172a;
+  color: #fff;
+  height: auto;
+  
+}
+
+.contact-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #2563eb;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  /* display: block; */
+  width: 100px;
+  height: 4px;
+  background: #2563eb;
+  margin: 8px auto 0;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: #bbb;
+  margin-bottom: 40px;
+}
+
+.contact-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.contact-info, .contact-form {
+  background: #192638;
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.contact-info h3, .contact-form h3 {
+  margin-bottom: 15px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.icon {
+  width: 40px;
+  height: 40px;
+  background:#2563eb;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+  background: #0e1b2a;
+  color: #fff;
+  font-size: 14px;
+}
+
+button {
+  background:#2563eb;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background:#132650;
+}
+.underline {
+    width: 60px;
+    height: 4px;
+    background: #2965f1;
+    margin: 0.5rem auto 2rem;
+    border-radius: 2px;
+  }
 
