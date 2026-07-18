@@ -1,281 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
-    <title>Prince Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#7a1622" />
+
+  <!-- Enable scroll-reveal ONLY when JS + IntersectionObserver + motion are OK,
+       so sections stay visible for no-JS users and crawlers. Set before paint. -->
+  <script>
+    (function () {
+      try {
+        var okMotion = !(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+        if ('IntersectionObserver' in window && okMotion) {
+          document.documentElement.classList.add('has-js');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- SEO meta -->
+  <title>Prince Patel | Developer, Testing, LinkedIn Content Creator</title>
+  <meta name="description" content="Prince Patel is a freelance Project Manager, Developer, Testing specialist and LinkedIn Content Creator working remotely with teams across India. B.Tech IT student helping businesses grow through tech and strategy." />
+  <meta name="author" content="Prince Patel" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Prince Patel | Portfolio" />
+  <meta property="og:description" content="Freelance Project Manager, Developer, Testing and LinkedIn Content Creator. Remote, across India." />
+  <meta property="og:type" content="website" />
+
+  <!-- Brand favicon: cream M on crimson -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%237a1622%22/><text x=%2250%22 y=%2274%22 font-family=%22Arial Black,Arial,sans-serif%22 font-weight=%22900%22 font-size=%2270%22 text-anchor=%22middle%22 fill=%22%23efe7d6%22>M</text></svg>" />
+
+  <!-- Google Fonts: Anton for poster headlines, Poppins for body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css?v=36" />
 </head>
 <body>
-    <nav>
-        <div class="nav-container">
-            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
-                <span>Prince</span>
-            </div>
-            <div class="links">
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><li><a href="#Home">Home</a></li></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><li><a href="#about">About</a></li></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><li><a href="#skills">Skills</a></li></div>
-                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><li><a href="#project">Project</a></li></div>
-                <!-- <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500"><a href="#">Blogs</a></div> -->
-                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600"><li><a href="#Enquiry">Enquiry</a></li></div>
-            </div>
-            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
-        </div>
-        <div class="dropdown">
-            <div class="links">
-                <a href="">Home</a>
-                <a href="">about</a>
-                <a href="">Skills</a>
-                <a href="">Project</a>
-                <a href="">Enquiry</a>
-                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
-            </div>
-        </div>
+
+  <!-- ============================================================
+       RIGHT-EDGE STICKER NAV (desktop) - colored ticket tabs
+       ============================================================ -->
+  <nav class="rail-nav" aria-label="Section navigation">
+    <a href="#about" class="rail-tab rail-green">ABOUT</a>
+    <a href="#experience" class="rail-tab rail-crimson">WORK</a>
+    <a href="#play" class="rail-tab rail-purple">PLAY</a>
+    <a href="#contact" class="rail-tab rail-gold">SAY HI</a>
+  </nav>
+
+  <!-- ============================================================
+       TOP NAV - wordmark + links + hamburger
+       ============================================================ -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-inner" aria-label="Primary">
+      <a href="#hero" class="logo">Prince Patel<span class="logo-star">&#10022;</span></a>
+
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobileDrawer"
+      >
+        <span></span><span></span><span></span>
+      </button>
     </nav>
-        <section>
-            <div class="main-container">
-                <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
-                </div>
-                <div class="content">
-                    <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800">Hey I'm <span>Prince</span></h1>
-                    <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900">I'm a <span><h5> IT Engineering Student & Web Developer</h5></span></div>
-                    <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">interactive web experiences. Currently pursuing IT Engineering while building projects that make a difference</p>
-                    <div class="social-links" data-aos="flip-down" data-aos-duration="1000" data-aos-delay="1200">
-                         <a href="#" ><i class="fa-brands fa-github"></i></a> 
-                        <!-- <a href="#"><i class="fa-brands fa-facebook"></i></a> -->
-                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    </div>
-                    <div class="btn" data-aos="zoom-in-right" data-aos-duration="1000" data-aos-delay="1300">
-                        <button>View Project</button>
-                    </div>
-                </div>
+  </header>
+
+  <!-- Mobile slide-in drawer -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <ul>
+      <li><a href="#about" class="drawer-link">About</a></li>
+      <li><a href="#experience" class="drawer-link">Work</a></li>
+      <li><a href="#play" class="drawer-link">Play</a></li>
+      <li><a href="#contact" class="drawer-link">Say Hi</a></li>
+    </ul>
+  </aside>
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <main>
+    <!-- ============================================================
+         1. HERO  (cream + dot grid)
+         ============================================================ -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <span class="eyebrow eyebrow-dash">&#10022; Freelance Multi-Specialist</span>
+
+        <h1 class="hero-title">
+          <span class="ht-line">PRINCE</span>
+          <span class="ht-line ht-accent">PATEL</span>
+        </h1>
+
+        <!-- <ul class="role-chips" aria-label="Roles">
+          <li class="chip chip-green">Project Manager</li>
+          <li class="chip chip-crimson">Developer</li>
+          <li class="chip chip-berry">Testing</li>
+          <li class="chip chip-gold">LinkedIn Content Creator</li>
+        </ul> -->
+
+        <p class="hero-proof">
+          interactive web experiences. Currently pursuing IT Engineering while building projects that make a difference and test websites, and write mini case studies on LinkedIn.
+          <strong>Freelance, and fully remote.</strong>
+        </p>
+
+        <div class="hero-ctas">
+          <a
+            href="https://wa.me/9601019028?text=Hi%20Mantra%2C%20"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Message on WhatsApp</a>
+          <a
+            href="https://www.linkedin.com/in/prince-bhavnagariya-2a997b31a/"
+            class="btn btn-ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Connect on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. ABOUT  (green drench) + journey map
+         ============================================================ -->
+    <section id="about" class="section sec-green reveal">
+      <div class="container">
+        <span class="eyebrow eyebrow-dash">(01) About</span>
+        <h2 class="sec-title">
+          ONE OPERATOR.
+          <span class="st-accent">FOUR ROLES.</span>
+        </h2>
+
+        <div class="glass-panel about-panel">
+          <p class="about-text">
+            I'm a Currently pursuing my degree in IT Engineering, I balance my academic studies with practical projects to enhance my skills and knowledge in the tech field.
+            <strong>B.Tech in Information Technology</strong> at A.D. Patel Institute of Technology.
+            I started with a  from Vidhyadhish Vidhyasankul, Bhavnagar,
+            and have since worked across <strong>small start-up(The Prasang), development, testing,
+            and LinkedIn content creation</strong>
+          </p>
+        </div>
+
+        <!-- Journey graphic: animated car between Anand and Ahmedabad -->
+        <div class="journey">
+          <h3 class="journey-title">Anand to Botad</h3>
+          <p class="journey-sub">
+            I study in <strong>Anand</strong>, and you'll often find me in
+            <strong>Botad</strong> too.
+          </p>
+
+          <div class="glass-panel journey-map">
+            <svg
+              viewBox="0 0 800 170"
+              xmlns="http://www.w3.org/2000/svg"
+              class="journey-svg"
+              role="img"
+              aria-label="Map showing Anand, where I study, and Ahmedabad, where I often am"
+            >
+              <line class="road" x1="210" y1="75" x2="590" y2="75" stroke-dasharray="6 7" stroke-linecap="round" />
+
+              <g class="car-grp">
+                <g class="car-bob">
+                  <ellipse class="car-shadow" cx="0" cy="9" rx="18" ry="1.8" />
+                  <path class="car-body"
+                        d="M -18 0 L -18 -3 L -14 -7 L -7 -11 L 8 -11 L 14 -7 L 18 -3 L 18 2 L -18 2 Z" />
+                  <path class="car-top"
+                        d="M -9 -7 L -5 -11 L 6 -11 L 10 -7 Z" />
+                  <path class="car-window"
+                        d="M -7 -7 L -4 -10 L 5 -10 L 8 -7 Z" />
+                  <circle class="car-light car-light-front" cx="16" cy="-1" r="1" />
+                  <circle class="car-light car-light-back"  cx="-16" cy="-1" r="0.8" />
+                  <g class="car-wheel">
+                    <circle cx="-10" cy="2" r="3.5" />
+                    <circle class="car-wheel-hub" cx="-10" cy="2" r="1.3" />
+                  </g>
+                  <g class="car-wheel">
+                    <circle cx="10" cy="2" r="3.5" />
+                    <circle class="car-wheel-hub" cx="10" cy="2" r="1.3" />
+                  </g>
+                </g>
+              </g>
+
+              <g class="pin pin-major" transform="translate(240,75)">
+                <circle class="pin-ring" r="12" />
+                <circle class="pin-dot" r="4" />
+                <text class="pin-name" y="35" text-anchor="middle">Anand</text>
+                <text class="pin-tag"  y="53" text-anchor="middle">Study</text>
+              </g>
+              <g class="pin pin-major" transform="translate(560,75)">
+                <circle class="pin-ring" r="12" />
+                <circle class="pin-dot" r="4" />
+                <text class="pin-name" y="35" text-anchor="middle">Botad</text>
+                <text class="pin-tag"  y="53" text-anchor="middle">Often here</text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Horizontal marquee band -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Testing <b class="mstar">&#10022;</b> Project Management <b class="mstar">&#10022;</b> Development <b class="mstar">&#10022;</b> LinkedIn Content <b class="mstar">&#10022;</b>&nbsp;</span>
+        <span>Testing <b class="mstar">&#10022;</b> Project Management <b class="mstar">&#10022;</b> Development <b class="mstar">&#10022;</b> LinkedIn Content <b class="mstar">&#10022;</b>&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- ============================================================
+         3. WORK  (crimson drench) - pinned horizontal scroll
+         Scroll down: the title + all cards travel sideways across a
+         pinned viewport. Falls back to vertical stack on mobile and
+         with reduced motion.
+         ============================================================ -->
+    <section id="experience" class="hpin sec-crimson" aria-label="Work">
+      <div class="hpin-sticky">
+        <div class="hpin-track" id="hpinTrack">
+          <div class="hpin-panel">
+            <span class="eyebrow eyebrow-dash">(02) Work</span>
+            <h2 class="sec-title">
+              STUFF I'VE
+              <span class="st-accent">SHIPPED.</span>
+            </h2>
+            <span class="scroll-hint">Keep scrolling &rarr;</span>
+          </div>
+
+          <article class="glass-panel work-card">
+            <div class="work-tags"><span class="badge badge-test">Small Start-up</span></div>
+            <h3 class="work-title">The Prasang</h3>
+            <p class="work-desc">At The Prasang, we offer targeted advertisement services to help vendors amplify their business presence.</p>
+          </article>
+
+          <article class="glass-panel work-card">
+            <div class="work-tags"><span class="badge badge-pm">DAIICT Hackathon</span></div>
+            <h3 class="work-title">Career Guidance Advisor</h3>
+            <p class="work-desc">Your personalized career navigation system helping students and professionals find their ideal career paths through AI-powered recommendations</p>
+          </article>
+
+          <!-- <article class="glass-panel work-card">
+            <div class="work-tags"><span class="badge badge-pm">Project Manager</span></div>
+            <h3 class="work-title">Chemical company product site</h3>
+            <p class="work-desc">Managed timelines, content and delivery for a chemical company's product website.</p>
+          </article> -->
+
+          <article class="glass-panel work-card">
+            <div class="work-tags">
+              <span class="badge badge-dev">Developer</span>
+              <span class="badge badge-test">Testing</span>
             </div>
-        </section>
-        <!-- ****************************************************************************************** -->
-        <section id="about" class="about">
-  <h2>About Me</h2>
-  <div class="underline"></div>
+            <h3 class="work-title">Medical store website</h3>
+            <p class="work-desc">Developed and tested a local medical store's website end-to-end: layout, catalog and contact flow.</p>
+          </article>
 
-  <div class="intro">
-    I'm a developer <span class="highlight">Prince Patel</span>, an IT Engineering Student
-  </div>
+          <!-- <article class="glass-panel work-card">
+            <div class="work-tags"><span class="badge badge-dev">Developer</span></div>
+            <h3 class="work-title">Artisan bakery storefront</h3>
+            <p class="work-desc">Built and shipped an artisan bakery's online storefront end-to-end: layout, content and made-to-order flow.</p>
+          </article> -->
 
-  <p>
-    I am passionate about web development and building interactive, user-friendly websites and applications. 
-    Currently pursuing my degree in IT Engineering, I balance my academic studies with practical projects 
-    to enhance my skills and knowledge in the tech field.
-  </p>
+          <!-- <article class="glass-panel work-card">
+            <div class="work-tags"><span class="badge badge-pm">Project Manager</span></div>
+            <h3 class="work-title">Employee management system</h3>
+            <p class="work-desc">Led the rollout of an employee management portal for a paper manufacturer: requirements, planning, testing hand-off and stakeholder reporting.</p>
+          </article> -->
 
-  <p>
-    My journey in web development has led me to work on various projects, including 
-    <a href="https://theprasang.com" target="_blank">The Prasang</a>
-    <a href="#" target="_blank"></a>. These experiences have significantly contributed to my growth as a developer.
-  </p>
-
-  <div class="grid-container">
-    <div>
-      <h3>Education</h3>
-      <ul>
-        <li>B.Tech in IT Engineering</li>
-        <li>Higher Secondary School Certificate</li>
-        <li>Excel master</li>
-        <li>CCC certificate</li>
-
-
-      </ul>
-    </div>
-
-    <div>
-      <h3>Interests</h3>
-      <ul>
-        <li>Web Development</li>
-        <li>UI/UX Design</li>
-        <li>Problem Solving</li>
-      </ul>
-    </div>
-  </div>
-</section>
-            <!-- ***************************************************************************     -->
-      <section id="skills"  class="skills-section">
-  <h2>My Skills</h2>
-  <div class="underline"></div>
-  <p class="skills-intro">
-    Here are some of the technologies and tools I am proficient in. I continuously learn and
-    improve my skills to stay updated with the latest trends.
-  </p>
-
-  <div class="skills-grid">
-
-    <!-- Skill Card -->
-    <div class="skill-card">
-      <div class="skill-header">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
-        <span>HTML</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress fill-html" style="width: 90%;"></div>
-      </div>
-      <span class="percent">90%</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-header">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
-        <span>CSS</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress fill-css" style="width: 80%;"></div>
-      </div>
-      <span class="percent">80%</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-header">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
-        <span>JavaScript</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress fill-js" style="width: 40%;"></div>
-      </div>
-      <span class="percent">40%</span>
-    </div>
-
-     <div class="skill-card">
-      <div class="skill-header">
-        <!-- <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="Tailwind CSS" /> -->
-         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C Language Logo" width="30" height="30">
-
-        <span>C/C++</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress fill-tailwind" style="width: 65%;"></div>
-      </div>
-      <span class="percent">65%</span>
-    </div> 
-
-    <!-- <div class="skill-card">
-      <div class="skill-header">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap" />
-        <span>Bootstrap</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress fill-bootstrap" style="width: 85%;"></div>
-      </div>
-      <span class="percent">85%</span>
-    </div> -->
-
-    <div class="skill-card">
-      <div class="skill-header">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" />
-        <span>Git</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress fill-git" style="width: 75%;"></div>
-      </div>
-      <span class="percent">75%</span>
-    </div>
-
-    <div class="skill-card">
-      <div class="skill-header">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
-        <span>GitHub</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress fill-github" style="width: 60%;"></div>
-      </div>
-      <span class="percent">60%</span>
-    </div>
-
-    <!-- <div class="skill-card">
-      <div class="skill-header">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="Database" />
-        <span>Database</span>
-      </div>
-      <div class="progress-bar">
-        <div class="progress fill-db" style="width: 65%;"></div>
-      </div>
-      <span class="percent">65%</span>
-    </div> -->
-
-  </div>
-</section>
-
-<!-- *************************ENQUIRY*************************************** -->
- <section class="contact-section">
-  
-    <h2 class="section-title">Enquiry</h2>
-    <div class="underline"></div>
-    <p class="section-subtitle">Feel free to contact me for any work opportunities or just to say hello!</p>
-    
-    <div class="contact-container">
-      
-      <!-- Contact Information -->
-      <div class="contact-info">
-        
-        <h3>Contact Information</h3>
-        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
-
-        <div class="info-item">
-          <div class="icon email-icon">📧</div>
-          <div>
-            <h4>Email</h4>
-            <p>princebhavnagariya43@gmail.com</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="icon phone-icon">📞</div>
-          <div>
-            <h4>Phone</h4>
-            <p>+91 9601019028</p>
-          </div>
-        </div>
-
-        <div class="info-item">
-          <div class="icon location-icon">📍</div>
-          <div>
-            <h4>Location</h4>
-            <p>Ahmedabad, India</p>
-          </div>
+          <article class="glass-panel work-card work-card-current">
+            <div class="work-tags">
+              <span class="badge badge-pm">Project Manager</span>
+              <span class="badge badge-current">Current</span>
+            </div>
+            <h3 class="work-title">Production management system</h3>
+            <p class="work-desc">Currently leading a production-management build for a tissue manufacturer: planning, team coordination and delivery.</p>
+          </article>
         </div>
       </div>
+    </section>
 
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <h3>Send Message</h3>
-        <form>
-          <div class="input-row">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
+    <!-- ============================================================
+         4. PLAY  (gold) - interactive doodle canvas
+         ============================================================ -->
+    <section id="play" class="section sec-gold reveal">
+      <div class="container">
+        <span class="eyebrow eyebrow-dash">(03) Playground</span>
+        <h2 class="sec-title">
+          DOODLE
+          <span class="st-accent-crimson">SOMETHING.</span>
+        </h2>
+        <p class="play-sub">Bored of scrolling? Grab a colour and draw. No rules, nothing saved to any server.</p>
+
+        <div class="glass-panel doodle">
+          <div class="doodle-tools">
+            <div class="swatches" id="swatches" role="group" aria-label="Brush colours">
+              <button type="button" class="swatch is-active" style="--sw:#1c1b18" data-color="#1c1b18" aria-label="Ink"></button>
+              <button type="button" class="swatch" style="--sw:#c62a34" data-color="#c62a34" aria-label="Crimson"></button>
+              <button type="button" class="swatch" style="--sw:#157a3c" data-color="#157a3c" aria-label="Green"></button>
+              <button type="button" class="swatch" style="--sw:#2e6fd6" data-color="#2e6fd6" aria-label="Blue"></button>
+              <button type="button" class="swatch" style="--sw:#e6a417" data-color="#e6a417" aria-label="Gold"></button>
+              <button type="button" class="swatch" style="--sw:#6a5aa6" data-color="#6a5aa6" aria-label="Purple"></button>
+              <button type="button" class="swatch" style="--sw:#e85c4a" data-color="#e85c4a" aria-label="Coral"></button>
+            </div>
+            <label class="brush-size">Brush
+              <input type="range" id="brushSize" min="2" max="40" value="9" />
+            </label>
+            <div class="doodle-actions">
+              <button type="button" id="doodleErase" class="doodle-btn">Eraser</button>
+              <button type="button" id="doodleClear" class="doodle-btn">Clear</button>
+              <button type="button" id="doodleSave" class="doodle-btn doodle-btn-primary">Save PNG</button>
+            </div>
           </div>
-          <input type="text" placeholder="Project Inquiry" required>
-          <textarea placeholder="Message" rows="5" required></textarea>
-          <button type="submit">Send</button>
+          <canvas id="doodleCanvas" class="doodle-canvas" aria-label="Drawing canvas"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         5. CONTACT  (charcoal) - glass form
+         ============================================================ -->
+    <section id="contact" class="section sec-dark reveal">
+      <div class="container contact-inner">
+        <span class="eyebrow eyebrow-dash eyebrow-light">(04) Contact</span>
+        <h2 class="sec-title sec-title-light">
+          LET'S BUILD
+          <span class="st-accent-gold">SOMETHING.</span>
+        </h2>
+        <p class="contact-sub">Have a project in mind? Send me a message straight to WhatsApp.</p>
+
+        <form class="glass-panel contact-form" id="contactForm" novalidate>
+          <div class="field">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required placeholder="Your name" />
+          </div>
+
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Tell me a bit about your project..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            Send on WhatsApp &rarr;
+          </button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
         </form>
+
+        <div class="socials" aria-label="Social links">
+          <a href="https://www.linkedin.com/in/prince-bhavnagariya-2a997b31a/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/>
+            </svg>
+          </a>
+          <a href="https://github.com/Prince9028" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.9 1.3 1.9 1.3 1.1 1.9 2.9 1.3 3.6 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.3-3.2-.1-.3-.5-1.6.1-3.3 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 3 .1 3.3.8.8 1.3 1.9 1.3 3.2 0 4.6-2.8 5.7-5.5 6 .4.3.8 1 .8 2v3c0 .3.2.7.8.6A12 12 0 0 0 12 .3"/>
+            </svg>
+          </a>
+          <a href="https://wa.me/9601019028" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/>
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/_princepatelll/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.42.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.42 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.42 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.42-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.42a3.7 3.7 0 0 1-1.38-.9 3.7 3.7 0 0 1-.9-1.38c-.16-.42-.36-1.06-.42-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.42-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.42C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63a5.86 5.86 0 0 0-2.13 1.38A5.86 5.86 0 0 0 .63 4.14c-.3.76-.5 1.64-.56 2.91C.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.32.8.74 1.48 1.38 2.13a5.86 5.86 0 0 0 2.13 1.38c.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56a5.86 5.86 0 0 0 2.13-1.38 5.86 5.86 0 0 0 1.38-2.13c.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91a5.86 5.86 0 0 0-1.38-2.13A5.86 5.86 0 0 0 19.86.63c-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zm0 10.16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.85a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/>
+            </svg>
+          </a>
+          <a href="princebhavnagariya43@gmail.com" class="social-btn" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
+              <path d="M22 4H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h20a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.24l-10 6.25L2 8.24V6.25l10 6.25 10-6.25v1.99z"/>
+            </svg>
+          </a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
+  <footer class="footer">
+    <p class="footer-credit">Designed &amp; built from scratch by Prince Patel</p>
+    <p class="footer-copy">&copy; <span id="year">2026</span> Prince Patel &middot; All rights reserved</p>
+  </footer>
 
-
-
-        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-        <script>
-          AOS.init({offset:0});
-        </script>
-        <script>
-            function hamburg(){
-                const navbar = document.querySelector(".dropdown")
-                navbar.style.transform = "translateY(0px)"
-            }
-            function cancel(){
-                const navbar = document.querySelector(".dropdown")
-                navbar.style.transform = "translateY(-500px)"
-            }
-        </script>
+  <script src="script.js?v=13"></script>
 </body>
 </html>
